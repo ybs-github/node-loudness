@@ -1,7 +1,7 @@
 const execa = require('execa')
 const path = require('path')
 
-const executablePath = path.join(__dirname, 'adjust_get_current_system_volume_vista_plus.exe')
+const executablePath = path.join(__dirname, 'adjust_get_current_system_volume_vista_plus.exe').replace('\\app.asar\\', '\\app.asar.unpacked\\')
 
 async function runProgram (...args) {
   return (await execa(executablePath, args)).stdout
